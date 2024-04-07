@@ -2,7 +2,7 @@
 const Slider = () => {
     return (
         <div>
-            <div className="carousel rounded-xl w-full">
+            <div className="carousel rounded-md lg:rounded-xl w-full">
                 <div id="img1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/60LMGwt/pexels-diego-f-parra-843633.jpg" className="h-[600px] w-full bg-cover bg-center" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

@@ -13,13 +13,13 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100 mt-5 container mx-auto">
+        <div className="navbar bg-base-100 mt-2 lg:mt-5 container mx-2 lg:mx-auto">
             <div className="flex-1">
                 <Link to="/" className="text-4xl text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
             <div className="flex-none gap-10">
                 <div>
-                    <ul className="flex gap-5 text-xl font-semibold">
+                    <ul className="lg:flex hidden gap-5 text-xl font-semibold">
                         {
                             links
                         }

@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "estate_title": "Luxury Penthouse with Panoramic Views",
+        "estate_title": "Luxury Penthouse with Panoramic",
         "segment_name": "Penthouse",
         "description": "Experience the epitome of luxury living in this stunning penthouse boasting breathtaking panoramic views of the city skyline. Featuring modern architecture and lavish amenities, this penthouse offers an unparalleled lifestyle.",
         "price": "$5,000,000",
-        "status": "sale",
+        "status": "rent",
         "area": "3000 sq ft",
         "location": "Downtown Metropolis",
         "facilities": [
@@ -56,7 +56,7 @@
         "segment_name": "Resort",
         "description": "Experience unparalleled luxury and relaxation at this beachfront resort. With its world-class amenities, stunning ocean views, and impeccable service, this resort promises a truly unforgettable getaway.",
         "price": "$20,000,000",
-        "status": "sale",
+        "status": "rent",
         "area": "20 acres",
         "location": "Tropical Paradise",
         "facilities": [
@@ -90,7 +90,7 @@
         "segment_name": "Beachfront Property",
         "description": "Own a piece of paradise with this luxurious beachfront property. With its pristine sandy beach, azure waters, and luxurious amenities, this property offers an exclusive coastal lifestyle.",
         "price": "$12,000,000",
-        "status": "sale",
+        "status": "rent",
         "area": "5000 sq ft",
         "location": "Tropical Haven",
         "facilities": [
@@ -99,6 +99,6 @@
             "Infinity Pool",
             "Outdoor Kitchen"
         ],
-        "image": "https://i.ibb.co/THbFVrZ/Luxury-Beachfront-Property.jpg"
+        "image": "https://i.ibb.co/L02g4mZ/floridapanhandlehomewaterfront.jpg"
     }
 ]
