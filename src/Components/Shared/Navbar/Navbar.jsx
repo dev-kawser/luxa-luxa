@@ -5,7 +5,7 @@ const Navbar = () => {
 
     const links = <>
 
-        <li><NavLink>Home</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink>Update Profile</NavLink></li>
         <li><NavLink>User Profile</NavLink></li>
 
@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100 container mx-auto">
+        <div className="navbar bg-base-100 mt-5 container mx-auto">
             <div className="flex-1">
                 <Link to="/" className="text-4xl text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>

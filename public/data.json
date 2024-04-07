@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "estate_title": "Luxury Penthouse with Panoramic Views",
+        "segment_name": "Penthouse",
+        "description": "Experience the epitome of luxury living in this stunning penthouse boasting breathtaking panoramic views of the city skyline. Featuring modern architecture and lavish amenities, this penthouse offers an unparalleled lifestyle.",
+        "price": "$5,000,000",
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "Downtown Metropolis",
+        "facilities": [
+            "Spacious Living Area",
+            "Private Terrace",
+            "Gourmet Kitchen",
+            "Infinity Pool"
+        ],
+        "image": "https://i.ibb.co/TcmGcYd/penthouse.jpg"
+    },
+    {
+        "id": 2,
+        "estate_title": "Exquisite Waterfront Villa",
+        "segment_name": "Villa",
+        "description": "Indulge in the ultimate luxury at this waterfront villa, nestled in a serene coastal setting. With its elegant design, sprawling grounds, and first-class amenities, this villa offers an unparalleled retreat.",
+        "price": "$8,500,000",
+        "status": "sale",
+        "area": "6000 sq ft",
+        "location": "Coastal Paradise",
+        "facilities": [
+            "Private Beach Access",
+            "Spa & Wellness Center",
+            "Home Theater",
+            "Tennis Court"
+        ],
+        "image": "https://i.ibb.co/6Rrz4Sz/Villa.jpg"
+    },
+    {
+        "id": 3,
+        "estate_title": "Exclusive Private Island Retreat",
+        "segment_name": "Private Island",
+        "description": "Escape to your own private paradise on this exclusive island retreat. Surrounded by crystal-clear waters and lush tropical landscapes, this estate offers the ultimate in seclusion and luxury.",
+        "price": "$15,000,000",
+        "status": "sale",
+        "area": "10 acres",
+        "location": "Tropical Archipelago",
+        "facilities": [
+            "Luxury Villa",
+            "Helipad",
+            "Infinity Pool",
+            "Yacht Dock"
+        ],
+        "image": "https://i.ibb.co/jJHrt7j/Private-Island.webp"
+    },
+    {
+        "id": 4,
+        "estate_title": "Luxurious Beachfront Resort",
+        "segment_name": "Resort",
+        "description": "Experience unparalleled luxury and relaxation at this beachfront resort. With its world-class amenities, stunning ocean views, and impeccable service, this resort promises a truly unforgettable getaway.",
+        "price": "$20,000,000",
+        "status": "sale",
+        "area": "20 acres",
+        "location": "Tropical Paradise",
+        "facilities": [
+            "Private Villas",
+            "Fine Dining Restaurants",
+            "Spa & Wellness Center",
+            "Infinity Pool"
+        ],
+        "image": "https://i.ibb.co/4JPJwNW/Resort.webp"
+    },
+    {
+        "id": 5,
+        "estate_title": "Majestic Mansion with Ocean Views",
+        "segment_name": "Mansion",
+        "description": "Discover unparalleled luxury in this majestic mansion boasting sweeping ocean views. With its grand architecture, opulent interiors, and sprawling grounds, this mansion is the epitome of extravagance.",
+        "price": "$25,000,000",
+        "status": "sale",
+        "area": "15,000 sq ft",
+        "location": "Cliffside Enclave",
+        "facilities": [
+            "Private Pool",
+            "Home Theater",
+            "Wine Cellar",
+            "Gymnasium"
+        ],
+        "image": "https://i.ibb.co/jvm87x1/Mansion.jpg"
+    },
+    {
+        "id": 6,
+        "estate_title": "Luxury Beachfront Property",
+        "segment_name": "Beachfront Property",
+        "description": "Own a piece of paradise with this luxurious beachfront property. With its pristine sandy beach, azure waters, and luxurious amenities, this property offers an exclusive coastal lifestyle.",
+        "price": "$12,000,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Tropical Haven",
+        "facilities": [
+            "Private Beach Access",
+            "Oceanfront Deck",
+            "Infinity Pool",
+            "Outdoor Kitchen"
+        ],
+        "image": "https://i.ibb.co/THbFVrZ/Luxury-Beachfront-Property.jpg"
+    }
+]
