@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home";
 import DetailsCard from "../Components/Card/DetailsCard";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Regiser/Register";
+import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes";
 
 
 const router = createBrowserRouter([
@@ -19,7 +20,9 @@ const router = createBrowserRouter([
 
             {
                 path: "/card/:id",
-                element: <DetailsCard></DetailsCard>,
+                element: <ProtectedRoutes>
+                    <DetailsCard></DetailsCard>
+                </ProtectedRoutes>,
                 loader: () => fetch('/data.json'),
             },
             {

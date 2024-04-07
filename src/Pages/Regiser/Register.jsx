@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/ContextProvider";
 
 
 const Register = () => {
+
+    const { registerUser, } = useContext(AuthContext)
+
 
     const {
         register,
@@ -13,6 +18,9 @@ const Register = () => {
     const onSubmit = (data) => {
         const email = data.email
         const password = data.password
+        registerUser(email, password)
+            .then()
+            .catch()
     }
 
     return (
@@ -53,12 +61,12 @@ const Register = () => {
                             <p>Already have an account?</p> <Link className="font-semibold" to="/login">Login</Link>
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-primary">Login</button>
+                            <button type="submit" className="btn btn-primary">Register</button>
                         </div>
                     </form>
                     <div className="flex items-center pt-4 space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
-                        <p className="px-3 text-sm dark:text-gray-600">Login with social accounts</p>
+                        <p className="px-3 text-sm dark:text-gray-600">Register with social accounts</p>
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
                     </div>
                     <div className="flex justify-center space-x-4">

@@ -1,6 +1,35 @@
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/ContextProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+    const loc = useLocation()
+    const navigate = useNavigate()
+
+    const { loginUser } = useContext(AuthContext)
+
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
+
+    const onSubmit = (data) => {
+        const email = data.email
+        const password = data.password
+        loginUser(email, password)
+            .then(result => {
+                console.log(result.user);
+                navigate(loc.state)
+            })
+            .catch()
+    }
+
+
     return (
         <div className="hero mt-10">
             <div className="hero-content gap-20 flex-col lg:flex-row-reverse">
@@ -9,18 +38,20 @@ const Login = () => {
                     <p className="py-6">Welcome to our login page. Please enter your credentials to access your account.</p>
                 </div>
                 <div className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" required />
+                            <input type="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
+                            {errors.email && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" required />
+                            <input type="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
+                            {errors.password && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                         </div>
                         <div className="flex mt-3">
                             <p>Do not have an account?</p> <Link className="font-semibold" to="/register">Register now</Link>
