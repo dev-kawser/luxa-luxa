@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Context/ContextProvider";
 
 
 const Navbar = () => {
 
+    const { user, LogOut } = useContext(AuthContext)
+console.log(user);
     const links = <>
 
         <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink>Update Profile</NavLink></li>
-        <li><NavLink>User Profile</NavLink></li>
+        <li><NavLink to="/login">Login</NavLink></li>
+        <li><NavLink to="/update-profile">Update Profile</NavLink></li>
 
     </>
 
@@ -19,23 +23,25 @@ const Navbar = () => {
             </div>
             <div className="flex-none gap-10">
                 <div>
-                    <ul className="lg:flex hidden gap-5 text-xl font-semibold">
+                    <ul className="lg:flex hidden gap-5 text-2xl font-semibold">
                         {
                             links
                         }
                     </ul>
                 </div>
-                <div className="dropdown dropdown-end">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="user" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {
+                    user ? <div className="dropdown dropdown-end">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img alt="user photo not found" src={user.photoURL || "https://i.ibb.co/vj2yqYj/pp.jpg"} />
+                            </div>
                         </div>
-                    </div>
-                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                        <li><a>User name:</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
-                </div>
+                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            <li className="text-xl"><a>User name: {user.displayName || "Name not found"}</a></li>
+                            <li className="font-semibold text-xl" onClick={() => LogOut()}><a>Logout</a></li>
+                        </ul>
+                    </div> : ""
+                }
             </div>
         </div>
     );

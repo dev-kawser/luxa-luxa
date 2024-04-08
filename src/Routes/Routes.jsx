@@ -5,6 +5,7 @@ import DetailsCard from "../Components/Card/DetailsCard";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Regiser/Register";
 import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/update-profile",
+                element: <UpdateProfile></UpdateProfile>
             },
         ]
     },

@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Context/ContextProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 const Login = () => {
 
-    const loc = useLocation()
+    const location = useLocation()
     const navigate = useNavigate()
 
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, user } = useContext(AuthContext)
 
 
     const {
@@ -22,13 +24,19 @@ const Login = () => {
         const email = data.email
         const password = data.password
         loginUser(email, password)
-            .then(result => {
-                console.log(result.user);
-                navigate(loc.state)
+            .then(() => {
+                toast.success("Successfully Login !")
             })
-            .catch()
+            .catch(() => {
+                toast.warn("User not found. Please check your password")
+            })
     }
 
+    useEffect(() => {
+        if (user) {
+            navigate(location.state)
+        }
+    }, [location.state, navigate, user])
 
     return (
         <div className="hero mt-10">

@@ -1,25 +1,43 @@
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/Firebase.config";
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AuthContext = createContext('')
 
 const ContextProvider = ({ children }) => {
 
+    
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
+
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     const registerUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const loginUser = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    const googleUser = () => {
+        return signInWithPopup(auth, googleProvider)
+    }
 
+    const githubUser = () => {
+        return signInWithPopup(auth, githubProvider)
+    }
 
+    const LogOut = () => {
+        return signOut(auth)
+    }
+      
 
 
 
@@ -28,15 +46,16 @@ const ContextProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             if (currentUser) {
                 setUser(currentUser);
+                setLoading(false);
             }
             else {
                 setUser(null)
+                setLoading(false);
             }
         });
 
-        return () => {
-            unSubscribe()
-        }
+        return () => unSubscribe()
+        
 
     }, [])
 
@@ -46,15 +65,22 @@ const ContextProvider = ({ children }) => {
         registerUser,
         setUser,
         user,
-        loginUser
+        loginUser,
+        loading,
+        googleUser,
+        githubUser,
+        LogOut
     }
 
 
-    
+
     return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
-        </AuthContext.Provider>
+        <div>
+            <AuthContext.Provider value={authInfo}>
+                {children}
+            </AuthContext.Provider>
+            <ToastContainer />
+        </div>
     );
 };
 
