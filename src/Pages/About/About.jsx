@@ -1,8 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import { Helmet } from "react-helmet-async";
+
 
 const About = () => {
     return (
+        <>
+        <Helmet>
+            <title>LuxuriaLuxe | About</title>
+        </Helmet>
+        
         <div className="p-6 lg:mt-20 sm:p-12 dark:bg-gray-50 dark:text-gray-800">
             <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
                 <img src="https://i.ibb.co/NyD9m1y/lll.png" alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300" />
@@ -24,6 +31,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

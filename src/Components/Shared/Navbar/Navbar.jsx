@@ -25,7 +25,7 @@ const Navbar = () => {
             };
         }} to="/about">About</NavLink></li>
 
-        <li className="hover:scale-110 transition"><NavLink style={({ isActive }) => {
+        <li className="hover:scale-110 transition lg:flex hidden"><NavLink style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 color: isActive ? "blue" : "",
@@ -33,7 +33,7 @@ const Navbar = () => {
             };
         }} to="/login">Login</NavLink></li>
 
-        <li className="hover:scale-110 transition"><NavLink style={({ isActive }) => {
+        <li className="hover:scale-110 transition "><NavLink style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 color: isActive ? "blue" : "",
@@ -46,12 +46,15 @@ const Navbar = () => {
 
     return (
         <div className="navbar bg-base-100 mt-2 lg:mt-5 container mx-2 lg:mx-auto">
-            <div className="flex-1">
+            <div className="flex-1 hidden lg:flex ">
                 <Link to="/" className="text-4xl text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
-            <div className="flex-none gap-10">
+            <div className="flex-1 lg:hidden">
+                <Link to="/" className="text-2xl text-blue-500 font-bold"><span className="text-red-500">L</span>L</Link>
+            </div>
+            <div className="flex-none gap-2 lg:gap-10">
                 <div>
-                    <ul className="lg:flex hidden gap-5 text-2xl font-semibold">
+                    <ul className="flex gap-3 lg:gap-5 text-lg lg:text-2xl font-semibold">
                         {
                             links
                         }

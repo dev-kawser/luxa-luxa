@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Context/ContextProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -41,6 +42,9 @@ const Login = () => {
 
     return (
         <div className="hero mt-10">
+            <Helmet>
+                <title>LuxuriaLuxe | Login</title>
+            </Helmet>
             <div className="hero-content gap-20 flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>

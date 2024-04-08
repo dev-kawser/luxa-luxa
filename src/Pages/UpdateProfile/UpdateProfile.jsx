@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/ContextProvider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
     const { user } = useContext(AuthContext)
@@ -37,6 +38,9 @@ const UpdateProfile = () => {
     }
     return (
         <div className="hero mt-3">
+            <Helmet>
+                <title>LuxuriaLuxe | Update Profile</title>
+            </Helmet>
             <div className="hero-content w-96">
                 <div className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div>
