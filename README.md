@@ -1,8 +1,19 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Luxury-luxia
+##Live Site URL: https://luxuria-luxe.web.app/
+###Features and Characteristics:
+*Luxury Lifestyle Showcase: Experience the epitome of luxury through our curated collection of high-end products, services, and experiences.
 
-Currently, two official plugins are available:
+*Sleek and Modern Design: Immerse yourself in a visually stunning website layout that reflects the elegance and sophistication of luxury living.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*Seamless Animation and Transitions: Elevate user experience with smooth animations powered by AOS Package and Animate CSS, providing a delightful browsing experience.
+
+*Effortless Form Handling: Streamline user interactions with our website using React Hook Form, ensuring efficient and error-free form submissions for inquiries, bookings, and more.
+
+*Personalized Recommendations: Receive tailored recommendations based on your preferences and interests, making your luxury shopping experience even more bespoke and enjoyable.
+
+###NPM Packages Used:
+*AOS Package
+*Animate CSS
+*React Hook Form
+
