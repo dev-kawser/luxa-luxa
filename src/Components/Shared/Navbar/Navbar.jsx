@@ -9,9 +9,37 @@ const Navbar = () => {
     console.log(user);
     const links = <>
 
-        <li className="hover:scale-110 transition"><NavLink to="/">Home</NavLink></li>
-        <li className="hover:scale-110 transition"><NavLink to="/login">Login</NavLink></li>
-        <li className="hover:scale-110 transition"><NavLink to="/update-profile">Update Profile</NavLink></li>
+        <li className="hover:scale-110 transition"><NavLink style={({ isActive }) => {
+            return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "blue" : "",
+                borderBottom: isActive ? '5px solid red' : 'none'
+            };
+        }} to="/">Home</NavLink></li>
+
+        <li className="hover:scale-110 transition"><NavLink style={({ isActive }) => {
+            return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "blue" : "",
+                borderBottom: isActive ? '5px solid red' : 'none'
+            };
+        }} to="/about">About</NavLink></li>
+
+        <li className="hover:scale-110 transition"><NavLink style={({ isActive }) => {
+            return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "blue" : "",
+                borderBottom: isActive ? '5px solid red' : 'none'
+            };
+        }} to="/login">Login</NavLink></li>
+
+        <li className="hover:scale-110 transition"><NavLink style={({ isActive }) => {
+            return {
+                fontWeight: isActive ? "bold" : "",
+                color: isActive ? "blue" : "",
+                borderBottom: isActive ? '5px solid red' : 'none'
+            };
+        }} to="/update-profile">Update Profile</NavLink></li>
 
     </>
 
