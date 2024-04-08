@@ -24,15 +24,8 @@ const Navbar = () => {
             };
         }} to="/about">About</NavLink></li>
 
-        <li className="hover:scale-110 transition animate__animated animate__backInRight lg:flex hidden"><NavLink style={({ isActive }) => {
-            return {
-                fontWeight: isActive ? "bold" : "",
-                color: isActive ? "blue" : "",
-                borderBottom: isActive ? '5px solid red' : 'none'
-            };
-        }} to="/login">Login</NavLink></li>
 
-        <li className="hover:scale-110 transition animate__animated animate__backInRight"><NavLink style={({ isActive }) => {
+        <li className="hover:scale-110 lg:flex hidden transition animate__animated animate__backInRight"><NavLink style={({ isActive }) => {
             return {
                 fontWeight: isActive ? "bold" : "",
                 color: isActive ? "blue" : "",
@@ -46,10 +39,10 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 mt-2 lg:mt-5 container mx-2 md:mx-5 lg:mx-auto">
             <div className="flex-1 hidden lg:flex ">
-                <Link to="/" className="text-4xl animate__animated animate__backInLeft text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
+                <Link to="/" className="text-4xl animate__animated animate__jackInTheBox text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
             <div className="flex-1 lg:hidden">
-                <Link to="/" className="text-2xl text-blue-500 font-bold"><span className="text-red-500">L</span>L</Link>
+                <Link to="/" className="text-2xl animate__animated animate__jackInTheBox text-blue-500 font-bold"><span className="text-red-500">L</span>L</Link>
             </div>
             <div className="flex-none gap-2 lg:gap-10">
                 <div>
@@ -60,17 +53,16 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {
-                    user ? <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img alt="not found" src={user ? user.photoURL : "https://i.ibb.co/vj2yqYj/pp.jpg"} />
-                            </div>
+                    user ? <div className="flex items-center gap-2">
+                        <div data-tip={user.displayName} className="tooltip tooltip-bottom hover:scale-110 border-2 lg:p-1 border-black">
+                            <img className="w-10" alt="not found" src={user ? user.photoURL : "https://i.ibb.co/vj2yqYj/pp.jpg"} />
                         </div>
-                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li className="text-xl font-semibold"><a>User name: {user?.displayName || "Name not found"}</a></li>
-                            <li className="font-semibold text-xl" onClick={() => LogOut()}><a>Logout</a></li>
-                        </ul>
-                    </div> : ""
+                        <div>
+                            <button className="lg:btn btn-sm bg-blue-500 text-white lg:font-bold" onClick={() => LogOut()}>Log Out</button>
+                        </div>
+                    </div> : <div>
+                        <Link to="/login"><button className="btn btn-link lg:btn-outline font-bold">Login</button></Link>
+                    </div>
                 }
             </div>
         </div>

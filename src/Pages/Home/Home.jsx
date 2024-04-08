@@ -8,7 +8,7 @@ const Home = () => {
     const cardData = useLoaderData();
 
     return (
-        <div className="lg:mt-12 mt-7 container mx-2 md:mx-5 lg:mx-auto">
+        <div className="lg:mt-12 mt-7 container mx-2 lg:mx-auto">
             <Helmet>
                 <title>LuxuriaLuxe | Home</title>
             </Helmet>

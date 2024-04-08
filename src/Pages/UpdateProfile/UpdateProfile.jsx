@@ -15,8 +15,8 @@ const UpdateProfile = () => {
     } = useForm({
         defaultValues: {
             displayName: user?.displayName,
-            photoUrl : user?.photoURL,
-            email : user?.email,
+            photoUrl: user?.photoURL,
+            email: user?.email,
         }
     })
 
@@ -27,7 +27,7 @@ const UpdateProfile = () => {
         const photoUrl = data.photoUrl
 
         updateProfile(user, {
-            displayName: displayName, 
+            displayName: displayName,
             photoURL: photoUrl,
             email: email,
             password: password,
@@ -44,7 +44,7 @@ const UpdateProfile = () => {
             <div className="hero-content w-96">
                 <div className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div>
-                        <h2 className="text-2xl font-bold text-center -mb-6 mt-2">Update Your Profile</h2>
+                        <h2 className="text-2xl font-bold text-center -mb-6 mt-5">Update Your Profile</h2>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
@@ -64,12 +64,6 @@ const UpdateProfile = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" placeholder="email" className="input input-bordered" {...register("email")} />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input type="password" placeholder="password" className="input input-bordered" {...register("password")} />
                         </div>
                         <div className="flex mt-3">
                             <p>Do not want update?</p> <Link className="font-semibold" to="/login">Login</Link>
