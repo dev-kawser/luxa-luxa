@@ -16,7 +16,6 @@ const UpdateProfile = () => {
             displayName: user?.displayName,
             photoUrl : user?.photoURL,
             email : user?.email,
-
         }
     })
 

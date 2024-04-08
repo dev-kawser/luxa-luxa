@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/ContextProvider";
 import { toast } from "react-toastify";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -18,11 +19,19 @@ const Register = () => {
     const onSubmit = (data) => {
         const email = data.email
         const password = data.password
-
+        const displayName = data.displayName
+        const photoUrl = data.photoUrl
 
         registerUser(email, password)
-            .then(() => {
+            .then((result) => {
                 toast.success("Successfully register !")
+                updateProfile(result.user, {
+                    displayName: displayName,
+                    photoURL: photoUrl,
+                    email: email,
+                })
+                    .then()
+                    .catch()
             })
             .catch()
     }

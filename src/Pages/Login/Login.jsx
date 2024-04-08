@@ -26,6 +26,7 @@ const Login = () => {
         loginUser(email, password)
             .then(() => {
                 toast.success("Successfully Login !")
+                navigate(location.state)
             })
             .catch(() => {
                 toast.warn("User not found. Please check your password")

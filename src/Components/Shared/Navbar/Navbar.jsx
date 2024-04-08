@@ -6,12 +6,12 @@ import { AuthContext } from "../../../Context/ContextProvider";
 const Navbar = () => {
 
     const { user, LogOut } = useContext(AuthContext)
-console.log(user);
+    console.log(user);
     const links = <>
 
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/login">Login</NavLink></li>
-        <li><NavLink to="/update-profile">Update Profile</NavLink></li>
+        <li className="hover:scale-110 transition"><NavLink to="/">Home</NavLink></li>
+        <li className="hover:scale-110 transition"><NavLink to="/login">Login</NavLink></li>
+        <li className="hover:scale-110 transition"><NavLink to="/update-profile">Update Profile</NavLink></li>
 
     </>
 

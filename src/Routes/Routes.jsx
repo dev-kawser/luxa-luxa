@@ -6,12 +6,14 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Regiser/Register";
 import ProtectedRoutes from "./ProtectedRoutes/ProtectedRoutes";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -36,7 +38,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/update-profile",
-                element: <UpdateProfile></UpdateProfile>
+                element: <ProtectedRoutes>
+                    <UpdateProfile></UpdateProfile>
+                </ProtectedRoutes>
             },
         ]
     },

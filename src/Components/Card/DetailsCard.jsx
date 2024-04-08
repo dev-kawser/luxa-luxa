@@ -9,7 +9,7 @@ const DetailsCard = () => {
     const { estate_title, area, price, segment_name, facilities, description, status, image, location } = item
 
     return (
-        <div className="flex p-7 rounded-md lg:flex-row bg-slate-100 mt-10 flex-col gap-12 container lg:mx-auto mx-2">
+        <div className="flex p-7 rounded-md lg:flex-row-reverse bg-slate-100 mt-10 flex-col gap-12 container lg:mx-auto mx-2">
             <div className="flex items-center justify-center">
                 <img className="lg:h-[600px] rounded-xl" src={image} alt="" />
             </div>
