@@ -37,16 +37,16 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100 mt-2 lg:mt-5 container mx-2 md:mx-5 lg:mx-auto">
-            <div className="flex-1 hidden lg:flex ">
+        <div className="navbar pl-5 bg-base-100 mt-2 lg:mt-5 container mx-2 md:mx-5 lg:mx-auto">
+            <div className="flex-1 ml-4 hidden lg:flex ">
                 <Link to="/" className="text-4xl animate__animated animate__jackInTheBox text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
-            <div className="flex-1 lg:hidden">
+            <div className="flex-1 ml-4 lg:hidden">
                 <Link to="/" className="text-2xl animate__animated animate__jackInTheBox text-blue-500 font-bold"><span className="text-red-500">L</span>L</Link>
             </div>
             <div className="flex-none gap-2 lg:gap-10">
                 <div>
-                    <ul className="flex gap-3 lg:gap-5 text-lg lg:text-2xl font-semibold">
+                    <ul className="flex gap-3 lg:gap-5 text-base lg:text-2xl font-semibold">
                         {
                             links
                         }
