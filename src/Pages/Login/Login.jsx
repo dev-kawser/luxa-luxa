@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/ContextProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 
 const Login = () => {
@@ -13,6 +15,7 @@ const Login = () => {
     const navigate = useNavigate()
 
     const { loginUser, user } = useContext(AuthContext)
+    const [showPassword, setShowPassword] = useState(false)
 
 
     const {
@@ -59,11 +62,16 @@ const Login = () => {
                             <input type="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
                             {errors.email && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
+                            <input type={showPassword ? "text" : "password"} placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute text-xl top-12 right-6">
+                                {
+                                    showPassword ? <FaRegEyeSlash /> : <FaRegEye />
+                                }
+                            </span>
                             {errors.password && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                         </div>
                         <div className="flex mt-3">

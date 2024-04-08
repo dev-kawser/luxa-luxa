@@ -45,7 +45,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100 mt-2 lg:mt-5 container mx-2 lg:mx-auto">
+        <div className="navbar bg-base-100 mt-2 lg:mt-5 container mx-2 md:mx-5 lg:mx-auto">
             <div className="flex-1 hidden lg:flex ">
                 <Link to="/" className="text-4xl animate__animated animate__flipInX text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
@@ -68,7 +68,7 @@ const Navbar = () => {
                             </div>
                         </div>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                            <li className="text-xl"><a>User name: {user.displayName || "Name not found"}</a></li>
+                            <li className="text-xl font-semibold"><a>User name: {user.displayName || "Name not found"}</a></li>
                             <li className="font-semibold text-xl" onClick={() => LogOut()}><a>Logout</a></li>
                         </ul>
                     </div> : ""

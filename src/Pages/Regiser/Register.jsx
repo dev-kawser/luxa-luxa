@@ -5,11 +5,15 @@ import { AuthContext } from "../../Context/ContextProvider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
+
 
 const Register = () => {
 
     const { registerUser, googleUser, githubUser } = useContext(AuthContext)
     const [error, setError] = useState("")
+    const [showPassword, setShowPassword] = useState(false)
 
     const {
         register,
@@ -18,6 +22,9 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = (data) => {
+
+        setError("")
+
         const email = data.email
         const password = data.password
         const displayName = data.displayName
@@ -25,8 +32,9 @@ const Register = () => {
 
         const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
-        if (regex.test(data.password)) {
+        if (!regex.test(data.password)) {
             setError("Password should be one Upper case, one lower case, and at least 6 characters")
+            return;
         }
 
         registerUser(email, password)
@@ -99,14 +107,19 @@ const Register = () => {
                             <input type="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
                             {errors.email && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
 
-                            <input type="password" placeholder="password" className="input input-bordered" {...register("password", {
+                            <input type={showPassword ? "text" : "password"} placeholder="password" className="input input-bordered" {...register("password", {
                                 required: true,
                             })} />
+                            <span onClick={() => setShowPassword(!showPassword)} className="absolute text-xl top-12 right-6">
+                                {
+                                    showPassword ? <FaRegEyeSlash /> : <FaRegEye />
+                                }
+                            </span>
                             {errors.password && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                             <div>
                                 {

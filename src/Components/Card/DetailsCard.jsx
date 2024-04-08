@@ -10,7 +10,7 @@ const DetailsCard = () => {
     const { estate_title, area, price, segment_name, facilities, description, status, image, location } = item
 
     return (
-        <div className="flex p-7 rounded-md lg:flex-row-reverse bg-slate-100 mt-10 flex-col gap-12 container lg:mx-auto mx-2">
+        <div className="flex p-7 rounded-md lg:flex-row-reverse bg-slate-100 mt-5 lg:mt-10 flex-col gap-12 container md:mx-5 lg:mx-auto mx-2">
             <Helmet>
                 <title>LuxuriaLuxe | {segment_name}</title>
             </Helmet>

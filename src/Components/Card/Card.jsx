@@ -11,7 +11,7 @@ const Card = ({ cardData }) => {
             <div className="text-center animate__animated animate__fadeInLeft text-4xl font-bold">
                 Estates
             </div>
-            <div className="grid mt-10 gap-7 grid-cols-1 lg:grid-cols-3">
+            <div className="grid mt-10 gap-7 grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
                 {
                     cardData.map(sc => <SingleCard key={sc.id} sc={sc}></SingleCard>)
                 }
