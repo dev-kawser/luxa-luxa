@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/ContextProvider";
@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 const Register = () => {
 
     const { registerUser, googleUser, githubUser } = useContext(AuthContext)
-
+    const [error, setError] = useState("")
 
     const {
         register,
@@ -22,6 +22,12 @@ const Register = () => {
         const password = data.password
         const displayName = data.displayName
         const photoUrl = data.photoUrl
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (regex.test(data.password)) {
+            setError("Password should be one Upper case, one lower case, and at least 6 characters")
+        }
 
         registerUser(email, password)
             .then((result) => {
@@ -65,7 +71,7 @@ const Register = () => {
             <Helmet>
                 <title>LuxuriaLuxe | Register</title>
             </Helmet>
-            
+
             <div className="hero-content w-96">
                 <div className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div>
@@ -100,14 +106,12 @@ const Register = () => {
 
                             <input type="password" placeholder="password" className="input input-bordered" {...register("password", {
                                 required: true,
-                                pattern:
-                                {
-                                    value: /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/i,
-                                    message: 'Password should be one Upper case, one Lower case and at least 6 character'
-                                }
                             })} />
+                            {errors.password && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                             <div>
-                                {errors.password && <small className="text-red-500 font-medium mt-1">{errors.password.message}</small>}
+                                {
+                                    error && <small className="text-red-500 font-medium mt-1">{error}</small>
+                                }
                             </div>
                         </div>
                         <div className="flex mt-3">

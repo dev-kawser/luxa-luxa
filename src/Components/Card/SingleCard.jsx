@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const SingleCard = ({ sc }) => {
 
     const { id, estate_title, price, facilities, status, image, location } = sc
 
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div data-aos="fade-up" className="card bg-base-100 shadow-xl">
             <figure><img className="lg:h-96" src={image} alt={estate_title} /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl">{estate_title}</h2>

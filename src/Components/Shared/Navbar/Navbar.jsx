@@ -47,7 +47,7 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 mt-2 lg:mt-5 container mx-2 lg:mx-auto">
             <div className="flex-1 hidden lg:flex ">
-                <Link to="/" className="text-4xl text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
+                <Link to="/" className="text-4xl animate__animated animate__flipInX text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
             <div className="flex-1 lg:hidden">
                 <Link to="/" className="text-2xl text-blue-500 font-bold"><span className="text-red-500">L</span>L</Link>
@@ -64,7 +64,7 @@ const Navbar = () => {
                     user ? <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img alt="user photo not found" src={user.photoURL || "https://i.ibb.co/vj2yqYj/pp.jpg"} />
+                                <img alt="not found" src={user ? user.photoURL : "https://i.ibb.co/vj2yqYj/pp.jpg"} />
                             </div>
                         </div>
                         <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
