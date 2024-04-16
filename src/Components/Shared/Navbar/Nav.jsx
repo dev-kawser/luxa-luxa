@@ -43,7 +43,7 @@ const Nav = () => {
             <div className="navbar-end">
                 {
                     user ? <div className="flex items-center gap-2">
-                        <div data-tip={user.displayName} className="tooltip lg:flex hidden tooltip-bottom hover:scale-110 border-2 lg:p-1 border-black">
+                        <div data-tip={user.displayName} className="tooltip tooltip-left lg:flex hidden hover:scale-110 border-2 lg:p-1 border-blue-300">
                             <img className="w-10" alt="not found" src={user ? user.photoURL : "https://i.ibb.co/vj2yqYj/pp.jpg"} />
                         </div>
                         <div>
