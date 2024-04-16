@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Card from "../../Components/Card/Card";
-import Slider from "../../Components/Slider/Slider";
 import { useLoaderData } from "react-router-dom";
+import Slide from "../../Components/Slider/Slide";
 
 const Home = () => {
 
@@ -13,7 +13,7 @@ const Home = () => {
                 <title>LuxuriaLuxe | Home</title>
             </Helmet>
             
-            <Slider></Slider>
+            <Slide></Slide>
             <Card cardData={cardData}></Card>
         </div>
     );

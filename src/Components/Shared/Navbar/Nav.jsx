@@ -47,7 +47,7 @@ const Nav = () => {
                             <img className="w-10" alt="not found" src={user ? user.photoURL : "https://i.ibb.co/vj2yqYj/pp.jpg"} />
                         </div>
                         <div>
-                            <button className="lg:btn mr-2 btn-sm bg-blue-500 text-white lg:font-bold" onClick={() => LogOut()}>Log Out</button>
+                            <button className="lg:btn mr-5 btn-sm bg-blue-500 text-white lg:font-bold" onClick={() => LogOut()}>Log Out</button>
                         </div>
                     </div> : <div>
                         <Link to="/login"><button className="btn btn-link lg:btn-outline font-bold">Login</button></Link>
