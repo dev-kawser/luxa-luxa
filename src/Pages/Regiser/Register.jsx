@@ -81,7 +81,7 @@ const Register = () => {
             </Helmet>
 
             <div className="hero-content w-96">
-                <div className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div data-aos="zoom-in" className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div>
                         <h2 className="text-2xl font-bold text-center -mb-6 mt-2">Register Now</h2>
                     </div>

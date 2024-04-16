@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Card from "../../Components/Card/Card";
 import { useLoaderData } from "react-router-dom";
 import Slide from "../../Components/Slider/Slide";
+import States from "../../Components/States/States";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             
             <Slide></Slide>
             <Card cardData={cardData}></Card>
+            <States></States>
         </div>
     );
 };

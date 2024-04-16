@@ -16,4 +16,5 @@
 * AOS Package
 * Animate CSS
 * React Hook Form
+* Swiper slider
 

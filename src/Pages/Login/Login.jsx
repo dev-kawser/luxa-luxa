@@ -16,6 +16,7 @@ const Login = () => {
 
     const { loginUser, googleUser,githubUser, user } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
+    const [error, setError] = useState("")
 
 
     const {
@@ -27,6 +28,13 @@ const Login = () => {
     const onSubmit = (data) => {
         const email = data.email
         const password = data.password
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!regex.test(data.password)) {
+            setError("Password should be one Upper case, one lower case, and at least 6 characters")
+            return;
+        }
+
         loginUser(email, password)
             .then(() => {
                 toast.success("Successfully Login !")
@@ -53,7 +61,7 @@ const Login = () => {
                     <h1 className="text-5xl font-bold">Login now!</h1>
                     <p className="py-6">Welcome to our login page. Please enter your credentials to access your account.</p>
                 </div>
-                <div className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div data-aos="zoom-in" className="card pb-5 shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -74,6 +82,11 @@ const Login = () => {
                             </span>
                             {errors.password && <small className="text-red-500 font-medium mt-1">This field is required</small>}
                         </div>
+                        <div>
+                                {
+                                    error && <small className="text-red-500 font-medium mt-1">{error}</small>
+                                }
+                            </div>
                         <div className="flex mt-3">
                             <p>Do not have an account?</p> <Link className="font-semibold" to="/register">Register now</Link>
                         </div>
