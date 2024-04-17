@@ -3,6 +3,7 @@ import Card from "../../Components/Card/Card";
 import { useLoaderData } from "react-router-dom";
 import Slide from "../../Components/Slider/Slide";
 import States from "../../Components/States/States";
+import Gallery from "../../Components/Gallery/Gallery";
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
             <Slide></Slide>
             <Card cardData={cardData}></Card>
             <States></States>
+            <Gallery></Gallery>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/ContextProvider";
 import { toast } from "react-toastify";
 import { updateProfile } from "firebase/auth";
@@ -14,6 +14,9 @@ const Register = () => {
     const { registerUser, googleUser, githubUser } = useContext(AuthContext)
     const [error, setError] = useState("")
     const [showPassword, setShowPassword] = useState(false)
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const {
         register,
@@ -40,6 +43,7 @@ const Register = () => {
         registerUser(email, password)
             .then((result) => {
                 toast.success("Successfully register !")
+                navigate(location?.state ? location.state : '/login')
                 updateProfile(result.user, {
                     displayName: displayName,
                     photoURL: photoUrl,
