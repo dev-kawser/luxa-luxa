@@ -14,8 +14,8 @@ const About = () => {
                 <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
                     <img data-aos="zoom-in" src="https://i.ibb.co/NyD9m1y/lll.png" alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300" />
                     <div className="flex flex-col">
-                        <h4 className="text-lg font-semibold text-center md:text-left">Ahmed Safi</h4>
-                        <p className="dark:text-gray-600">Welcome to LuxuriaLuxe, where luxury meets sophistication and elegance. At LuxuriaLuxe, we are dedicated to curating an unparalleled experience of refined luxury for discerning individuals who appreciate the finer things in life.
+                        <h4 className="text-3xl text-red-500 font-bold text-center md:text-left">Ahmed Safi</h4>
+                        <p className="text-blue-600">Welcome to LuxuriaLuxe, where luxury meets sophistication and elegance. At LuxuriaLuxe, we are dedicated to curating an unparalleled experience of refined luxury for discerning individuals who appreciate the finer things in life.
 
                             Our journey began with a passion for craftsmanship and a commitment to excellence. Founded 1992, we set out to redefine luxury by blending timeless elegance with modern innovation. Each product, service, and experience we offer is meticulously crafted to embody the essence of luxury and reflect our unwavering dedication to quality.
 

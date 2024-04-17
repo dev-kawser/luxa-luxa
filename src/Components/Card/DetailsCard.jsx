@@ -19,7 +19,7 @@ const DetailsCard = () => {
             </div>
             <div>
                 <div className="space-y-3">
-                    <h2 className="card-title text-4xl font-bold mt-5">{segment_name}</h2>
+                    <h2 className="card-title text-4xl text-emerald-500 font-bold mt-5">{segment_name}</h2>
                     <p className="font-semibold text-xl">Title: {estate_title}</p>
                     <h4 className="text-lg">Location: {location}</h4>
                 </div>
@@ -28,7 +28,7 @@ const DetailsCard = () => {
                     <h4 className="font-medium">Area: {area}</h4>
                 </div>
                 <div className="flex mt-5 gap-10">
-                    <h4 className="font-medium">Price: {price}</h4>
+                    <h4 className="font-medium text-sky-500">Price: {price}</h4>
                     <h4 className="font-medium">For: {status}</h4>
                 </div>
                 <div className="mt-5 space-y-3">

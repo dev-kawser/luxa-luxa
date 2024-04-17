@@ -32,7 +32,10 @@ const UpdateProfile = () => {
             email: email,
             password: password,
         })
-            .then(() => toast.success("Updated Successfully"))
+            .then(() => {
+                toast.success("Updated Successfully")
+                window.location.reload();
+            })
             .catch()
 
     }
@@ -46,6 +49,7 @@ const UpdateProfile = () => {
                     <div>
                         <h2 className="text-2xl font-bold text-center -mb-6 mt-5">Update Your Profile</h2>
                     </div>
+                    <img className="w-20 pl-5 pt-10" src={user.photoURL} alt="" />
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">

@@ -31,7 +31,7 @@ const Nav = () => {
                         }
                     </ul>
                 </div>
-                <Link to="/" className="lg:text-4xl text-base animate__animated animate__jackInTheBox text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
+                <Link to="/" className="lg:text-4xl text-base text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu flex gap-3 menu-horizontal px-1 lg:text-2xl font-semibold">
@@ -44,7 +44,7 @@ const Nav = () => {
                 {
                     user ? <div className="flex items-center gap-2">
                         <div data-tip={user.displayName} className="tooltip tooltip-left lg:flex hidden hover:scale-110 border-2 lg:p-1 border-blue-300">
-                            <img className="w-10" alt="not found" src={user ? user.photoURL : "https://i.ibb.co/vj2yqYj/pp.jpg"} />
+                            <img className="w-10" alt="not found" src={user?.photoURL || "https://i.ibb.co/vj2yqYj/pp.jpg"} />
                         </div>
                         <div>
                             <button className="lg:btn mr-5 btn-sm bg-blue-500 text-white lg:font-bold" onClick={() => LogOut()}>Log Out</button>

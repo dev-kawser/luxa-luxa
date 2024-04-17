@@ -16,7 +16,7 @@ const SingleCard = ({ sc }) => {
                 <h2 className="card-title text-2xl">{estate_title}</h2>
                 <h4 className="text-lg font-medium">Location: {location}</h4>
                 <div className="flex justify-between">
-                    <h4 className="font-medium">Price: {price}</h4>
+                    <h4 className="font-medium">Price: <span className="text-green-500">{price}</span></h4>
                     <h4 className="font-medium">For: {status}</h4>
                 </div>
                 <div>
@@ -26,7 +26,7 @@ const SingleCard = ({ sc }) => {
                     }
                 </div>
                 <Link to={`/card/${id}`} className="card-actions justify-end">
-                    <button className="btn btn-primary">View Details</button>
+                    <button className="btn btn-primary">View Property</button>
                 </Link>
             </div>
         </div>

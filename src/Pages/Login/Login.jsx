@@ -26,6 +26,9 @@ const Login = () => {
     } = useForm()
 
     const onSubmit = (data) => {
+        
+        setError("")
+
         const email = data.email
         const password = data.password
 
@@ -38,7 +41,7 @@ const Login = () => {
         loginUser(email, password)
             .then(() => {
                 toast.success("Successfully Login !")
-                navigate(location.state)
+                navigate(location?.state ? location.state : "/")
             })
             .catch(() => {
                 toast.warn("User not found. Please check your password")

@@ -39,7 +39,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About></About>
+                element: <ProtectedRoutes>
+                    <About></About>
+                </ProtectedRoutes>
             },
             {
                 path: "/update-profile",
