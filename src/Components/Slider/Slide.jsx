@@ -29,7 +29,7 @@ const Slide = () => {
 
         {
           data.map(data => <SwiperSlide key={data.id}>
-            <div className="hero lg:h-[600px] mt-4 rounded-2xl" style={{
+            <div className="hero lg:h-[600px] md:h-[300px] mt-4 rounded-2xl" style={{
               backgroundImage: `url(${data.
                 image})`
             }}>
