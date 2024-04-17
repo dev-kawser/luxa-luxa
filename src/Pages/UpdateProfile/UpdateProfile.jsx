@@ -49,7 +49,9 @@ const UpdateProfile = () => {
                     <div>
                         <h2 className="text-2xl font-bold text-center -mb-6 mt-5">Update Your Profile</h2>
                     </div>
-                    <img className="w-20 pl-5 pt-10" src={user.photoURL} alt="" />
+                    <div className="flex justify-center mt-10 -mb-5">
+                        <img className="w-20" src={user.photoURL} alt="" />
+                    </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">

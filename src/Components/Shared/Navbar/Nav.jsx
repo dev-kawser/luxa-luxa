@@ -9,11 +9,11 @@ const Nav = () => {
 
     const links = <>
 
-        <li className="transition animate__animated animate__backInRight"><NavLink to="/">Home</NavLink></li>
+        <li className="transition animate__animated animate__backInDown"><NavLink to="/">Home</NavLink></li>
 
-        <li className="transition animate__animated animate__backInRight"><NavLink to="/about">About</NavLink></li>
+        <li className="transition animate__animated animate__backInDown"><NavLink to="/about">About</NavLink></li>
 
-        <li className="transition animate__animated animate__backInRight"><NavLink to="/update-profile">Update Profile</NavLink></li>
+        <li className="transition animate__animated animate__backInDown"><NavLink to="/update-profile">Update Profile</NavLink></li>
 
     </>
 
@@ -31,7 +31,7 @@ const Nav = () => {
                         }
                     </ul>
                 </div>
-                <Link to="/" className="lg:text-4xl text-base text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
+                <Link to="/" className="lg:text-4xl animate__animated animate__fadeInDown text-base text-blue-500 font-bold"><span className="text-red-500">Luxuria</span>Luxe</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu flex gap-3 menu-horizontal px-1 lg:text-2xl font-semibold">
@@ -47,7 +47,7 @@ const Nav = () => {
                             <img className="w-10" alt="not found" src={user?.photoURL || "https://i.ibb.co/vj2yqYj/pp.jpg"} />
                         </div>
                         <div>
-                            <button className="lg:btn mr-5 btn-sm bg-blue-500 text-white lg:font-bold" onClick={() => LogOut()}>Log Out</button>
+                            <button className="lg:btn lg:btn-outline mr-5 btn-sm bg-blue-500 text-white lg:font-bold" onClick={() => LogOut()}>Log Out</button>
                         </div>
                     </div> : <div>
                         <Link to="/login"><button className="btn btn-link lg:btn-outline font-bold">Login</button></Link>
