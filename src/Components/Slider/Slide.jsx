@@ -7,11 +7,11 @@ import { useLoaderData } from 'react-router-dom';
 
 const Slide = () => {
 
-    const data = useLoaderData()
+  const data = useLoaderData()
 
-    return (
-        <div className="mx-2">
-            <Swiper
+  return (
+    <div className="mx-2">
+      <Swiper
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
@@ -37,7 +37,7 @@ const Slide = () => {
               <div className="hero-content text-center text-neutral-content">
                 <div className="">
                   <h1 className="mb-5 text-5xl font-bold text-white acme">{data.estate_title}</h1>
-                  <p className="mb-5 text-[14px] text-slate-450">{data.description.slice(0,110)
+                  <p className="mb-5 text-[14px] text-slate-450">{data.description.slice(0, 110)
                   }</p>
                 </div>
               </div>
@@ -47,8 +47,8 @@ const Slide = () => {
         }
 
       </Swiper>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Slide;
